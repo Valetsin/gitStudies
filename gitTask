@@ -1,0 +1,36 @@
+import random
+def main():
+    num1 = generate_one_number()
+    print(f"  {generate_one_number()}")
+    num2 = generate_two_number()
+    print("+", generate_two_number())
+    answer = int(input("Введите ответ: "))
+    answer1 = fold_number(num1, num2)
+    print(check_answer(answer,answer1))
+
+
+
+def check_answer(answer, answer1):
+       '''Проверяем ответ'''
+    if answer == answer1:
+        return f"Поздравляем с правельным решением "
+    else:
+        return f"Правельный ответ:{answer1}."
+        
+
+
+def generate_one_number():
+       '''Генерируем первоечисло'''
+    return random.randint(1, 999)
+
+
+def generate_two_number():
+       '''Генерируем второе число.'''
+    return random.randint(1, 999)
+
+
+def fold_number(num1, num2):
+     '''Получаем ответю'''
+    return num1 + num2
+
+main()
